@@ -1,4 +1,3 @@
-import React from 'react';
 import { IProducts } from '../../../redux/store';
 import { Card } from './style';
 import { useDispatch } from 'react-redux';

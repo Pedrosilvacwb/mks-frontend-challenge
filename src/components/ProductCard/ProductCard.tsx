@@ -1,15 +1,14 @@
 import { Card } from './style';
 import { BsBagPlus } from 'react-icons/bs';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../redux/store';
+import { useDispatch } from 'react-redux';
+import { IProducts } from '../../redux/store';
 import { addCart } from '../../redux/productSlice';
 
 interface IProductCardProps {
-  product: any;
+  product: IProducts;
 }
 const ProductCard = ({ product }: IProductCardProps) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state: RootState) => state.cart);
 
   return (
     <Card>

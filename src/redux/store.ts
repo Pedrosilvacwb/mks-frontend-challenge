@@ -16,6 +16,7 @@ export interface RootState {
   loading: boolean;
   error: any;
   cart: IProducts[] | [];
+  openCart: boolean;
 }
 
 const store = configureStore({

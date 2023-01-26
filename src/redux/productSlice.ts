@@ -6,6 +6,7 @@ interface RootState {
   loading: boolean;
   error: any;
   cart: IProducts[];
+  openCart: boolean;
 }
 
 export const initialState: RootState = {
@@ -13,9 +14,10 @@ export const initialState: RootState = {
   loading: false,
   error: null,
   cart: [],
+  openCart: false,
 };
 
-const slice = createSlice({
+const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
@@ -50,10 +52,19 @@ const slice = createSlice({
         );
       }
     },
+    setOpenCart: (state, action: PayloadAction<boolean>) => {
+      state.openCart = action.payload;
+    },
   },
 });
 
-export const { setData, setLoading, setError, addCart, removeCart } =
-  slice.actions;
+export const {
+  setData,
+  setLoading,
+  setError,
+  addCart,
+  removeCart,
+  setOpenCart,
+} = productsSlice.actions;
 
-export const reducer = slice.reducer;
+export const reducer = productsSlice.reducer;

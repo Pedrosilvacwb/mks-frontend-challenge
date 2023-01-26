@@ -1,10 +1,14 @@
-import React from 'react';
 import { SideBar } from './style';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import CartCard from '../CartCard/CartCard';
 
-const CartList = ({ openCart, setOpenCart }: any) => {
+interface ICartListProps {
+  openCart: boolean;
+  setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const CartList = ({ openCart, setOpenCart }: ICartListProps) => {
   const cart = useSelector((state: RootState) => state.cart);
   const total = cart
     .map((prod) => prod.price * prod.amount!)

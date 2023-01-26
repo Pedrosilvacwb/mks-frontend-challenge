@@ -4,7 +4,10 @@ import { TiShoppingCart } from 'react-icons/ti';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 
-const Header = ({ setOpenCart }: any) => {
+interface IHeaderProps {
+  setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Header = ({ setOpenCart }: IHeaderProps) => {
   const cart = useSelector((state: RootState) => state.cart);
 
   const amount = cart
@@ -21,7 +24,6 @@ const Header = ({ setOpenCart }: any) => {
           <span>Sistemas</span>
         </div>
         <button
-          data-testid="header-cart-btn"
           onClick={() => setOpenCart((prev: boolean) => !prev)}
           className="header__cart__btn"
         >
