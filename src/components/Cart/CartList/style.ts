@@ -10,7 +10,7 @@ export const SideBar = styled.div<ICartProps>`
   z-index: 1000;
 
   width: 450px;
-  height: 100%;
+  min-height: 100vh;
 
   background: var(--color-primary);
   color: var(--color-white);
@@ -51,7 +51,7 @@ export const SideBar = styled.div<ICartProps>`
 
   .cart__main {
     padding: 40px;
-    height: 250px;
+    height: 500px;
     overflow-y: auto;
   }
   .cart__main::-webkit-scrollbar {
@@ -61,6 +61,7 @@ export const SideBar = styled.div<ICartProps>`
   .cart__main::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+    background-color: var(--color-white);
   }
 
   .cart__main::-webkit-scrollbar-thumb {
@@ -103,7 +104,7 @@ export const SideBar = styled.div<ICartProps>`
   @media (max-width: 520px) {
     width: 90%;
     .cart__main {
-      height: 200px;
+      height: 250px;
     }
   }
 `;
